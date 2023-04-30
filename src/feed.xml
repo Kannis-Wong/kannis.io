@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kannis.IO</title>
+    <description>Join Kannis on a Journey of Technology Exploration
+</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 30 Apr 2023 22:23:37 +0800</pubDate>
+    <lastBuildDate>Sun, 30 Apr 2023 22:23:37 +0800</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Welcome to Kannis.IO Home!</title>
+        <description>&lt;p&gt;&amp;lt;!–-break-–&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is the place where you can find relief for your heart. Amidst the chaos and stress of life, you can find solace and comfort in the simple moments of joy and peace that surround you. Here, you can find the warm embrace of loved ones, the soothing sounds of nature, and the freedom to dance in the rain. This is the place where you can breathe in the fresh air and let go of your worries, and find the relief that your heart has been seeking. Enjoy Kannis.IO!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gallery&quot;&gt;Gallery&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/kannis.io.f1.jpg&quot; alt=&quot;image tooltip here&quot; /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;meow~~~ &amp;lt;3&lt;/code&gt;
+&lt;img src=&quot;/assets/img/kannis.io.cat.jpg&quot; alt=&quot;image tooltip here&quot; /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;meow meow!!&lt;/code&gt;
+&lt;img src=&quot;/assets/img/kannis.io.cat1.jpg&quot; alt=&quot;image tooltip here&quot; /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gorgeous scenery&lt;/code&gt;
+&lt;img src=&quot;/assets/img/kannis.io.bg.jpg&quot; alt=&quot;image tooltip here&quot; /&gt;
+&lt;img src=&quot;/assets/img/kannis.io.bg2.jpg&quot; alt=&quot;image tooltip here&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Apr 2023 00:00:00 +0800</pubDate>
+        <link>/posts/welcome-to-kannisio</link>
+        <guid isPermaLink="true">/posts/welcome-to-kannisio</guid>
+        
+        <category>software</category>
+        
+        <category>cloud</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Python AsyncIO Function</title>
+        <description>&lt;p&gt;&lt;em&gt;Learning how to wield concurrency will make your solutions more efficient, such as completing more tasks in the same time and getting more done in less time.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;!–-break-–&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Asyncio  is a library to write concurrent code using the async/await syntax. Asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance network and web-servers, database connection libraries, distributed task queues, etc. Asyncio is often a perfect fit for IO-bound and high-level structured network code.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Python&lt;/code&gt;:  Here is an example of using Python’s async and await keywords to create an asynchronous coroutine&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;asyncio&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_coroutine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Starting coroutine...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;asyncio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# simulate a delay of 1 second&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Coroutine completed.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Starting main function...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_coroutine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Main function completed.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;asyncio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this example, we define an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async&lt;/code&gt; function called my_coroutine that uses the await keyword to pause the execution of the coroutine while it waits for a simulated delay of 1 second using the asyncio.sleep() function.&lt;/p&gt;
+
+&lt;p&gt;We also define another &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async&lt;/code&gt; function called main that calls my_coroutine using the await keyword. Finally, we use the asyncio.run() function to run the main coroutine and initiate the execution of the asynchronous code.&lt;/p&gt;
+
+&lt;p&gt;When we run this code, we should see the following output:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;Starting main function...
+Starting coroutine...
+Coroutine completed.
+Main function completed.
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;notice-alert&quot;&gt;Note that the my_coroutine function is executed asynchronously, meaning that the main function does not block while my_coroutine is waiting for the delay to complete. This allows other code to execute in the meantime, making it possible to perform multiple tasks in parallel and improve the overall performance of the program.&lt;/p&gt;
+
+&lt;p class=&quot;notice-success&quot;&gt;You already know what is AsyncIO!&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://docs.python.org/3/&quot;&gt;Python doc&lt;/a&gt; for more info on how to get the most out of Python.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 30 Apr 2023 00:00:00 +0800</pubDate>
+        <link>/posts/python</link>
+        <guid isPermaLink="true">/posts/python</guid>
+        
+        <category>python</category>
+        
+        <category>howto</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>PowerShell Async Function</title>
+        <description>&lt;p&gt;&lt;em&gt;In PowerShell, a job is a background task or process that can be started asynchronously and run independently of the current PowerShell session. A job can be used to perform long-running or resource-intensive tasks, without blocking the current PowerShell session or requiring user input. Therefore, we should talk about async first.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;!–-break-–&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PowerShell&lt;/code&gt;: here’s an example of a PowerShell function that utilizes the Start-Job cmdlet to run a scriptblock in a separate background job&lt;/p&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;Invoke-BackgroundJob &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CmdletBinding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Parameter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ScriptBlock]&lt;span class=&quot;nv&quot;&gt;$ScriptBlock&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;nv&quot;&gt;$job&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Start&lt;/span&gt;-Job -ScriptBlock &lt;span class=&quot;nv&quot;&gt;$ScriptBlock&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$job&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$job&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Invoke-BackgroundJob -ScriptBlock &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Start-Sleep&lt;/span&gt; -Seconds 10
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello from background job!&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$job&lt;/span&gt;.State -eq &lt;span class=&quot;s2&quot;&gt;&quot;Running&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Background job is still running...&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Start-Sleep&lt;/span&gt; -Seconds 1
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Background job completed with state &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$job&lt;/span&gt;.State&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Receive-Job -Job &lt;span class=&quot;nv&quot;&gt;$job&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Background job output: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This code retrieves the output of the background job and prints it to the console.&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://learn.microsoft.com/en-us/powershell/&quot;&gt;PowerShell doc&lt;/a&gt; for more info on how to get the most out of PowerShell. File all bugs/feature requests at &lt;a href=&quot;https://github.com/PowerShell/PowerShell&quot;&gt;PowerShell’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 30 Apr 2023 00:00:00 +0800</pubDate>
+        <link>/posts/pwsh</link>
+        <guid isPermaLink="true">/posts/pwsh</guid>
+        
+        <category>pwsh</category>
+        
+        <category>howto</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Notice blocks for Jekyll</title>
+        <description>&lt;p class=&quot;lead&quot;&gt;By default dactl has a couple of special classes which will turn a paragraph into a notice block when added to it. Read on for information on how to use it.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-create-a-notice-block&quot;&gt;How to create a notice block&lt;/h2&gt;
+&lt;p&gt;Creating notices from your paragraphs works the same way as creating &lt;a href=&quot;LINKILYNKI&quot;&gt;leading post paragraphs&lt;/a&gt;.&lt;br /&gt;
+You need to add a correct class &lt;strong&gt;after&lt;/strong&gt; the paragraph:
+&amp;lt;!–-break-–&amp;gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;Sea otters [hold each other’s paws](https://www.youtube.com/watch?v=eTvX-CkfqRo) when they sleep so they don’t drift apart.  
+That is a fact, look it up on Wikipedia if you don&apos;t believe me.
+{: .notice}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;available-options&quot;&gt;Available options&lt;/h2&gt;
+&lt;h3 id=&quot;regular-notice-block&quot;&gt;Regular notice block&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;Sea otters &lt;a href=&quot;https://www.youtube.com/watch?v=eTvX-CkfqRo&quot;&gt;hold each other’s paws&lt;/a&gt; when they sleep so they don’t drift apart.&lt;br /&gt;
+That is a fact, look it up on Wikipedia if you don’t believe me.&lt;/p&gt;
+
+&lt;h3 id=&quot;alert-notice-block&quot;&gt;Alert notice block&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice-alert}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p class=&quot;notice-alert&quot;&gt;If one examines the capitalist paradigm of context, one is faced with a
+choice: either accept textual narrative or conclude that reality serves to
+exploit the Other.&lt;/p&gt;
+
+&lt;h3 id=&quot;success-notice-block&quot;&gt;Success notice block&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice-success}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p class=&quot;notice-success&quot;&gt;If one examines the capitalist paradigm of context, one is faced with a
+choice: either accept textual narrative or conclude that reality serves to
+exploit the Other.&lt;/p&gt;
+
+&lt;h2 id=&quot;multi-paragraph-notice-blocks&quot;&gt;Multi-paragraph notice blocks&lt;/h2&gt;
+&lt;p&gt;The easiest solution I found to wrapping more than paragraph into a notice is just inserting it into a markdown-enabled &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt; tag, like this:&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;notice&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;markdown=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+If one examines the capitalist paradigm of context, one is faced with a
+choice: either accept textual narrative or conclude that reality serves to
+exploit the Other.
+
+A number of dematerialisms concerning textual objectivism
+exist. However, if textual narrative holds, we have to choose between
+precultural theory and the conceptual paradigm of consensus.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Which, when processed by kramdown, shows up like this:&lt;/p&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;p&gt;If one examines the capitalist paradigm of context, one is faced with a
+choice: either accept textual narrative or conclude that reality serves to
+exploit the Other.&lt;/p&gt;
+
+  &lt;p&gt;A number of dematerialisms concerning textual objectivism
+exist. However, if textual narrative holds, we have to choose between
+precultural theory and the conceptual paradigm of consensus.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 20 Mar 2023 00:00:00 +0800</pubDate>
+        <link>/posts/notices</link>
+        <guid isPermaLink="true">/posts/notices</guid>
+        
+        <category>dactl</category>
+        
+        <category>howto</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

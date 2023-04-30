@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>PowerShell Async Function &#9642; Kannis.IO</title>
+<!--
+<meta name="description" content="In PowerShell, a job is a background task or process that can be started asynchronously and run independently of the current PowerShell session. A job can be used to perform long-running or resource-intensive tasks, without blocking the current PowerShell session or requiring user input. Therefore, we should talk about async...">
+-->
+<meta name="description" content="Join Kannis on a Journey of Technology Exploration
+">
+<meta name="keywords" content="pwsh, howto">
+<link rel="canonical" href="/posts/pwsh">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="PowerShell Async Function" />
+<meta name="twitter:description" content="Join Kannis on a Journey of Technology Exploration
+" />
+<meta name="twitter:image" content="" />
+<meta name="author" content="">
+<link rel="author" href="">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PowerShell Async Function">
+<meta property="og:description" content="Join Kannis on a Journey of Technology Exploration
+">
+<meta property="og:url" content="/posts/pwsh">
+<meta property="og:site_name" content="Kannis.IO">
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic">
+<style>
+    html {
+      font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+</style>
+<link rel="stylesheet" href="/assets/css/bf.css">
+   <body>
+       <div class="wrapper" id="blep">
+          <header>
+   <div class="menu">
+     <div class="logo">
+        <a href="/">Kannis.IO</a>
+        <object type="image/svg+xml" data="/assets/img/network_about.svg" class="logosvg">Your browser does not support svg images</object>
+     </div>
+       <ul>
+           <li><a href="/about">about</a>
+           <li><a href="/archive">archive</a>
+       </ul>
+   </div>
+   <div class="social">
+     <ul>
+       <li>
+            <a href="https://youtube.com/devaslife" target="_blank" class="smaller">
+              <span class="icon-youtube"></span>
+            </a>
+       <li>
+            <a href="https://twitter.com/Tesla" target="_blank" class="smaller">
+              <span class="icon-twitter"></span>
+            </a>
+       <li>
+            <a href="https://github.com/Kannis-Wong" target="_blank" class="smaller">
+              <span class="icon-github"></span>
+            </a>
+       <li>
+            <a href="mailto:hkwongao@connect.ust.hk" target="_blank">
+              <span class="icon-mail_outline"></span>
+            </a>
+       <li>
+            <a href="/feed.xml" target="_blank">
+                <span class="icon-rss_feed"></span>
+            </a>
+       <li>
+            <a href="#" onclick="switchTheme()" title="Switch theme?">
+              <span class="icon-invert_colors" id="theme-switcher"></span>
+            </a>
+     </ul>
+   </div>
+</header>
+<article class="post">
+<style>
+  .pwsh {
+    margin-bottom: 2em;
+  }
+  .pwsh::before {
+    background-image: url('assets/img/pwsh.bg.jpg');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .pwsh::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,100,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .pwsh-container,
+  .pwsh-container::before,
+  .pwsh-container::after {
+    height: 25rem;
+  }
+  .pwsh-bleed-container,
+  .pwsh-bleed-container::before,
+  .pwsh-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .pwsh-container,
+        .pwsh-container::before,
+        .pwsh-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  pwsh pwsh-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          PowerShell Async Function
+     </h1>
+     <div class="post-meta">
+        <span>30/04/2023</span>
+        <span>
+              <a href="/tag/pwsh">#pwsh</a>
+              <a href="/tag/howto">#howto</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <p><em>In PowerShell, a job is a background task or process that can be started asynchronously and run independently of the current PowerShell session. A job can be used to perform long-running or resource-intensive tasks, without blocking the current PowerShell session or requiring user input. Therefore, we should talk about async first.</em>
+<p>
+<p><code class="language-plaintext highlighter-rouge">PowerShell</code>: here’s an example of a PowerShell function that utilizes the Start-Job cmdlet to run a scriptblock in a separate background job
+<div class="language-powershell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre><td class="code"><pre><span class="k">function </span>Invoke-BackgroundJob <span class="o">{</span>
+    <span class="o">[</span><span class="na">CmdletBinding</span><span class="o">()]</span>
+    <span class="k">param</span><span class="o">(</span>
+        <span class="o">[</span>Parameter<span class="o">(</span><span class="nv">Mandatory</span><span class="o">=</span><span class="nv">$true</span><span class="o">)]</span>
+        <span class="o">[</span>ScriptBlock]<span class="nv">$ScriptBlock</span>
+    <span class="o">)</span>
+    
+    <span class="nv">$job</span> <span class="o">=</span> <span class="nb">Start</span>-Job -ScriptBlock <span class="nv">$ScriptBlock</span>
+    <span class="k">return</span> <span class="nv">$job</span>
+<span class="o">}</span>
+
+<span class="nv">$job</span> <span class="o">=</span> Invoke-BackgroundJob -ScriptBlock <span class="o">{</span>
+    <span class="nb">Start-Sleep</span> -Seconds 10
+    <span class="nb">Write-Host</span> <span class="s2">"Hello from background job!"</span>
+<span class="o">}</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="nv">$job</span>.State -eq <span class="s2">"Running"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nb">Write-Host</span> <span class="s2">"Background job is still running..."</span>
+    <span class="nb">Start-Sleep</span> -Seconds 1
+<span class="o">}</span>
+<span class="nb">Write-Host</span> <span class="s2">"Background job completed with state </span><span class="k">$(</span><span class="nv">$job</span>.State<span class="k">)</span><span class="s2">"</span>
+
+<span class="nv">$output</span> <span class="o">=</span> Receive-Job -Job <span class="nv">$job</span>
+<span class="nb">Write-Host</span> <span class="s2">"Background job output: </span><span class="nv">$output</span><span class="s2">"</span>
+
+</pre></table>
+</div>
+</div>
+<p>This code retrieves the output of the background job and prints it to the console.
+<p>Check out the <a href="https://learn.microsoft.com/en-us/powershell/">PowerShell doc</a> for more info on how to get the most out of PowerShell. File all bugs/feature requests at <a href="https://github.com/PowerShell/PowerShell">PowerShell’s GitHub repo</a>.
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'Kannis.IO';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+</aside>
+           <footer>
+    <span>Join Kannis on a Journey of Technology Exploration
+</span>
+    <span>written by Kannis.Wong</span>
+</footer>
+       </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+    

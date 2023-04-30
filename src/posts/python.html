@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>Python AsyncIO Function &#9642; Kannis.IO</title>
+<!--
+<meta name="description" content="Learning how to wield concurrency will make your solutions more efficient, such as completing more tasks in the same time and getting more done in less time.
+">
+-->
+<meta name="description" content="Join Kannis on a Journey of Technology Exploration
+">
+<meta name="keywords" content="python, howto">
+<link rel="canonical" href="/posts/python">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Python AsyncIO Function" />
+<meta name="twitter:description" content="Join Kannis on a Journey of Technology Exploration
+" />
+<meta name="twitter:image" content="" />
+<meta name="author" content="">
+<link rel="author" href="">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python AsyncIO Function">
+<meta property="og:description" content="Join Kannis on a Journey of Technology Exploration
+">
+<meta property="og:url" content="/posts/python">
+<meta property="og:site_name" content="Kannis.IO">
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic">
+<style>
+    html {
+      font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+</style>
+<link rel="stylesheet" href="/assets/css/bf.css">
+   <body>
+       <div class="wrapper" id="blep">
+          <header>
+   <div class="menu">
+     <div class="logo">
+        <a href="/">Kannis.IO</a>
+        <object type="image/svg+xml" data="/assets/img/network_about.svg" class="logosvg">Your browser does not support svg images</object>
+     </div>
+       <ul>
+           <li><a href="/about">about</a>
+           <li><a href="/archive">archive</a>
+       </ul>
+   </div>
+   <div class="social">
+     <ul>
+       <li>
+            <a href="https://youtube.com/devaslife" target="_blank" class="smaller">
+              <span class="icon-youtube"></span>
+            </a>
+       <li>
+            <a href="https://twitter.com/Tesla" target="_blank" class="smaller">
+              <span class="icon-twitter"></span>
+            </a>
+       <li>
+            <a href="https://github.com/Kannis-Wong" target="_blank" class="smaller">
+              <span class="icon-github"></span>
+            </a>
+       <li>
+            <a href="mailto:hkwongao@connect.ust.hk" target="_blank">
+              <span class="icon-mail_outline"></span>
+            </a>
+       <li>
+            <a href="/feed.xml" target="_blank">
+                <span class="icon-rss_feed"></span>
+            </a>
+       <li>
+            <a href="#" onclick="switchTheme()" title="Switch theme?">
+              <span class="icon-invert_colors" id="theme-switcher"></span>
+            </a>
+     </ul>
+   </div>
+</header>
+<article class="post">
+<style>
+  .python {
+    margin-bottom: 2em;
+  }
+  .python::before {
+    background-image: url('assets/img/py.bg.jpg');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .python::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,100,0,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .python-container,
+  .python-container::before,
+  .python-container::after {
+    height: 25rem;
+  }
+  .python-bleed-container,
+  .python-bleed-container::before,
+  .python-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .python-container,
+        .python-container::before,
+        .python-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  python python-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          Python AsyncIO Function
+     </h1>
+     <div class="post-meta">
+        <span>30/04/2023</span>
+        <span>
+              <a href="/tag/python">#python</a>
+              <a href="/tag/howto">#howto</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <p><em>Learning how to wield concurrency will make your solutions more efficient, such as completing more tasks in the same time and getting more done in less time.</em>
+<p>
+<p><strong>Asyncio  is a library to write concurrent code using the async/await syntax. Asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance network and web-servers, database connection libraries, distributed task queues, etc. Asyncio is often a perfect fit for IO-bound and high-level structured network code.</strong>
+<p><code class="language-plaintext highlighter-rouge">Python</code>:  Here is an example of using Python’s async and await keywords to create an asynchronous coroutine
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre><td class="code"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">my_coroutine</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Starting coroutine..."</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c"># simulate a delay of 1 second</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Coroutine completed."</span><span class="p">)</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Starting main function..."</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">my_coroutine</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Main function completed."</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></table>
+</div>
+</div>
+<p>In this example, we define an <code class="language-plaintext highlighter-rouge">async</code> function called my_coroutine that uses the await keyword to pause the execution of the coroutine while it waits for a simulated delay of 1 second using the asyncio.sleep() function.
+<p>We also define another <code class="language-plaintext highlighter-rouge">async</code> function called main that calls my_coroutine using the await keyword. Finally, we use the asyncio.run() function to run the main coroutine and initiate the execution of the asynchronous code.
+<p>When we run this code, we should see the following output:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre><td class="code"><pre>Starting main function...
+Starting coroutine...
+Coroutine completed.
+Main function completed.
+</pre></table>
+</div>
+</div>
+<p class="notice-alert">Note that the my_coroutine function is executed asynchronously, meaning that the main function does not block while my_coroutine is waiting for the delay to complete. This allows other code to execute in the meantime, making it possible to perform multiple tasks in parallel and improve the overall performance of the program.
+<p class="notice-success">You already know what is AsyncIO!
+<p>Check out the <a href="https://docs.python.org/3/">Python doc</a> for more info on how to get the most out of Python.
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'Kannis.IO';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+</aside>
+           <footer>
+    <span>Join Kannis on a Journey of Technology Exploration
+</span>
+    <span>written by Kannis.Wong</span>
+</footer>
+       </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+    
